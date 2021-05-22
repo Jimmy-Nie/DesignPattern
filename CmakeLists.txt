@@ -1,0 +1,10 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5.1)
+PROJECT(DesignPattern)
+
+SET(CMAKE_CXX_STANDARD 11)
+
+SET(CMAKE_C_COMPILER /usr/bin/gcc)
+SET(CMAKE_CXX_COMPILER /usr/bin/g++)
+
+#编译 工厂模式
+ADD_EXECUTABLE(SimpleFactory SimpleFactory/SimpleFacotry.h SimpleFactory/main.cpp)
