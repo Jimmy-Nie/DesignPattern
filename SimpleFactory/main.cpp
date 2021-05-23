@@ -4,7 +4,7 @@
  * Description: The design pattern of Simple Factory
  */
 
-#include "SimpleFacotry.h"
+#include "SimpleFactory.h"
 
 int main() {
     std::cout << "Simple Factory pattern ...\n" <<std::endl;

@@ -6,5 +6,17 @@ SET(CMAKE_CXX_STANDARD 11)
 SET(CMAKE_C_COMPILER /usr/bin/gcc)
 SET(CMAKE_CXX_COMPILER /usr/bin/g++)
 
+LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib) #添加动态连接库的路径
+
+#编译 简单工厂模式
+ADD_EXECUTABLE(SimpleFactory SimpleFactory/SimpleFactory.h SimpleFactory/main.cpp)
+
 #编译 工厂模式
-ADD_EXECUTABLE(SimpleFactory SimpleFactory/SimpleFacotry.h SimpleFactory/main.cpp)
+ADD_EXECUTABLE(Factory Factory/Factory.h Factory/main.cpp)
+
+#编译 抽象工厂模式
+ADD_EXECUTABLE(AbstractFactory AbstractFactory/AbstractFactory.h AbstractFactory/main.cpp)
+
+#编译 单例模式
+ADD_EXECUTABLE(Singleton Singleton/Singleton.h Singleton/main.cpp)
+TARGET_LINK_LIBRARIES(Singleton -lpthread)
