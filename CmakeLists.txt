@@ -23,3 +23,6 @@ TARGET_LINK_LIBRARIES(Singleton -lpthread)
 
 #编译 建造者模式
 ADD_EXECUTABLE(Builder Builder/Builder.h Builder/main.cpp)
+
+#编译 适配器模式
+ADD_EXECUTABLE(Adapter Adapter/Adapter.h Adapter/main.cpp)
