@@ -1,4 +1,7 @@
 # DesignPattern
+## 0. UML
+![UML](http://i1.fuimg.com/738210/ecc14f32f8fa8c80.png)
+
 ## 1. 定义
 ```asm
 设计模式:
