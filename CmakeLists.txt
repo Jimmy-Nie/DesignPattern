@@ -15,11 +15,14 @@ ADD_EXECUTABLE(SimpleFactory SimpleFactory/SimpleFactory.h SimpleFactory/main.cp
 ADD_EXECUTABLE(Factory Factory/Factory.h Factory/main.cpp)
 
 #编译 抽象工厂模式
-ADD_EXECUTABLE(AbstractFactory AbstractFactory/AbstractFactory.h AbstractFactory/main.cpp Builder/Builder.h Builder/main.cpp)
+ADD_EXECUTABLE(AbstractFactory AbstractFactory/AbstractFactory.h AbstractFactory/main.cpp Builder/Builder.h Builder/main.cpp Prototype/Prototype.h Prototype/main.cpp)
 
 #编译 单例模式
 ADD_EXECUTABLE(Singleton Singleton/Singleton.h Singleton/main.cpp)
 TARGET_LINK_LIBRARIES(Singleton -lpthread)
+
+#编译 原型模式
+ADD_EXECUTABLE(Prototype Prototype/Prototype.h Prototype/main.cpp)
 
 #编译 建造者模式
 ADD_EXECUTABLE(Builder Builder/Builder.h Builder/main.cpp)
