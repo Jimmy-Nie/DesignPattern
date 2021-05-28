@@ -1,6 +1,6 @@
 # DesignPattern
 ## 0. UML
-![UML](http://i1.fuimg.com/738210/ecc14f32f8fa8c80.png)
+![UML](http://i2.tiimg.com/738210/c7dd2dfa221ff86f.png)
 
 ## 1. 定义
 ```asm
