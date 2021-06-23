@@ -15,7 +15,7 @@ ADD_EXECUTABLE(SimpleFactory SimpleFactory/SimpleFactory.h SimpleFactory/main.cp
 ADD_EXECUTABLE(Factory Factory/Factory.h Factory/main.cpp)
 
 #编译 抽象工厂模式
-ADD_EXECUTABLE(AbstractFactory AbstractFactory/AbstractFactory.h AbstractFactory/main.cpp Builder/Builder.h Builder/main.cpp Prototype/Prototype.h Prototype/main.cpp Strategy/Strategy.h Strategy/main.cpp Decorator/Decorator.h Decorator/main.cpp)
+ADD_EXECUTABLE(AbstractFactory AbstractFactory/AbstractFactory.h AbstractFactory/main.cpp Builder/Builder.h Builder/main.cpp Prototype/Prototype.h Prototype/main.cpp Strategy/Strategy.h Strategy/main.cpp Decorator/Decorator.h Decorator/main.cpp Test/main.cpp Observer/observer.h Observer/main.cpp)
 
 #编译 单例模式
 ADD_EXECUTABLE(Singleton Singleton/Singleton.h Singleton/main.cpp)
@@ -30,8 +30,15 @@ ADD_EXECUTABLE(Builder Builder/Builder.h Builder/main.cpp)
 #编译 适配器模式
 ADD_EXECUTABLE(Adapter Adapter/Adapter.h Adapter/main.cpp)
 
+#编译 观察者模式
+ADD_EXECUTABLE(Observer Observer/Observer.h Observer/main.cpp)
+
 #编译 策略模式
 ADD_EXECUTABLE(Strategy Strategy/Strategy.h Strategy/main.cpp)
 
 #编译 装饰器模式
 ADD_EXECUTABLE(Decorator Decorator/Decorator.h Decorator/main.cpp)
+
+
+#编译 TEST
+ADD_EXECUTABLE(Tst Test/main.cpp)
