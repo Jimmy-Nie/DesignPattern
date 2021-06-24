@@ -1,33 +1,35 @@
 #include <iostream>
-#include <string>
-#include <functional>
 
-std::function<bool(int ,int)> fun;
+#include "ClassFactory.h"
+//#include "register.h"
 
-bool compareOrdinary(int a, int b) {
-    return (a > b);
-}
-
-auto compareLambda = [] (int a, int b) -> bool {return a>b;};
-
-class CompareClass {
+//test class
+class TestClass {
 public:
-    bool compareMember(int a, int b) {return a>b;}
-    static bool compareMemberStatic(int a, int b) {return a>b;}
+    void m_print() {
+        std::cout << "hello TestClass" << std::endl;
+    };
+
+    int i = 100;
 };
 
-int main() {
-    fun = compareOrdinary;
-    std::cout << std::boolalpha << "compareOrdinary: " << fun(2,3) << std::endl;
+class TestClassA {
+public:
+    void m_print() {
+        std::cout << "hello TestClassA" << std::endl;
+    };
 
-    fun = compareLambda;
-    std::cout << std::boolalpha << "compareLambda: " << fun(2,3) << std::endl;
+    int i = 10;
+};
 
-    fun = CompareClass::compareMemberStatic;
-    std::cout << std::boolalpha << "compareMemberStatic: " << fun(2,3) << std::endl;
+REGISTER(TestClass);
+REGISTER(TestClassA);
 
-    fun = std::bind(&CompareClass::compareMember, CompareClass(), std::placeholders::_2, std::placeholders::_1);
-    std::cout << std::boolalpha << "compareMember: " << fun(2,3) << std::endl;
-
-    return false;
+int main(int argc, char* argv[]) {
+    TestClass* ptrObj = (TestClass*)ClassFactory::getInstance().getClassByName("TestClass");
+    ptrObj->m_print();
+    std::cout<<ptrObj->i<<std::endl;
+    TestClassA* ptrObjA = (TestClassA*)ClassFactory::getInstance().getClassByName("TestClassA");
+    ptrObjA->m_print();
+    std::cout<<ptrObjA->i<<std::endl;
 }

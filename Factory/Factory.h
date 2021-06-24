@@ -1,3 +1,10 @@
+/**
+ * @brief: 工厂 模式
+ *          定义一个创建对象的接口，由客户端决定到底实例化哪一个类
+ * @author: jimmy
+ * @date: 2021-06-24
+ */
+
 #pragma once
 #include <iostream>
 #include <string>

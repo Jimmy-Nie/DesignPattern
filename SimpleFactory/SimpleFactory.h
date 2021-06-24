@@ -1,3 +1,10 @@
+/**
+ * @brief: 简单工厂 模式
+ *          将需要实例化的类都放到工厂类中去实现，减少耦合
+ * @author: jimmy
+ * @date: 2021-06-23
+ */
+
 #pragma once
 #include <iostream>
 
