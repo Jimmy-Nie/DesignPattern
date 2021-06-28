@@ -2,6 +2,7 @@
  * @brief: 反射机制
  *          指程序在运行时，访问、检测和修改它本身状态或行为的一种能力
  *          根据类名称（string），获取类和类中的方法/属性等
+ *          详细可参考：https://blog.csdn.net/qq_22660775/article/details/89713867
  * @author: jimmy
  * @date: 2021-06-223
  */
