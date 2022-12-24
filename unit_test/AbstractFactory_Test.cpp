@@ -1,4 +1,4 @@
-#include "AbstractFactory.h"
+#include "AbstractFactory/AbstractFactory.h"
 
 int main() {
     std::cout << "Abstract Factory Pattern\n" << std::endl;

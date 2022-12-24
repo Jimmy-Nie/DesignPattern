@@ -1,4 +1,4 @@
-#include "Factory.h"
+#include "Factory/Factory.h"
 
 int main() {
     std::cout << "Factory Pattern\n" << std::endl;

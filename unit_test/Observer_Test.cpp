@@ -1,7 +1,7 @@
 //
 // Created by Administrator on 2021/6/23.
 //
-#include "observer.h"
+#include "Observer/Observer.h"
 
 int main() {
     Student John1("John1");

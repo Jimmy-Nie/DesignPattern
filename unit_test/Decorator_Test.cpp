@@ -1,4 +1,4 @@
-#include "Decorator.h"
+#include "Decorator/Decorator.h"
 
 int main() {
     auto jimmy = new Person("Jimmy");

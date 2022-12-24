@@ -1,4 +1,4 @@
-#include "Prototype.h"
+#include "Prototype/Prototype.h"
 
 int main() {
     std::cout << "Prototype Pattern\n" << std::endl;

@@ -1,0 +1,42 @@
+#编译 简单工厂模式
+ADD_EXECUTABLE(SimpleFactory SimpleFactory_Test.cpp)
+
+#编译 工厂模式
+ADD_EXECUTABLE(Factory Factory_Test.cpp)
+
+#编译 抽象工厂模式
+ADD_EXECUTABLE(AbstractFactory AbstractFactory_Test.cpp)
+
+#编译 单例模式
+ADD_EXECUTABLE(Singleton Sigleton_Test.cpp)
+TARGET_LINK_LIBRARIES(Singleton PUBLIC -lpthread)
+
+#编译 原型模式
+ADD_EXECUTABLE(Prototype Prototype_Test.cpp )
+
+#编译 建造者模式
+ADD_EXECUTABLE(Builder Builder_Test.cpp)
+
+#编译 适配器模式
+ADD_EXECUTABLE(Adapter Adapter_Test.cpp)
+
+#编译 外观模式
+ADD_EXECUTABLE(Facade Facade_Test.cpp)
+
+#编译 观察者模式
+ADD_EXECUTABLE(Observer Observer_Test.cpp)
+
+#编译 命令模式
+ADD_EXECUTABLE(Command Command_Test.cpp)
+
+#编译 策略模式
+ADD_EXECUTABLE(Strategy Strategy_Test.cpp)
+
+#编译 装饰器模式
+ADD_EXECUTABLE(Decorator Decorator_Test.cpp)
+
+#编译 模板方法模式
+ADD_EXECUTABLE(Template Template_Test.cpp)
+
+#编译 反射机制
+ADD_EXECUTABLE(Reflex Reflex_Test.cpp)

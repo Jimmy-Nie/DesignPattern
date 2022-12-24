@@ -1,4 +1,4 @@
-#include "Adapter.h"
+#include "Adapter/Adapter.h"
 
 int main() {
     std::cout << "Adapter Pattern\n" << std::endl;

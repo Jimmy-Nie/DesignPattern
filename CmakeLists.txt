@@ -1,55 +1,32 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5.1)
 PROJECT(DesignPattern)
 
-SET(CMAKE_CXX_STANDARD 11)
-
+# Set the platform and compiler
+SET(PLATFORM x86_64)
 SET(CMAKE_C_COMPILER /usr/bin/gcc)
 SET(CMAKE_CXX_COMPILER /usr/bin/g++)
 
-LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib) #添加动态连接库的路径
+## set output dir
+SET(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) #set library output dir
+SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) #set library output dir
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) #set executable file output dir
 
-#编译 简单工厂模式
-ADD_EXECUTABLE(SimpleFactory SimpleFactory/SimpleFactory.h SimpleFactory/main.cpp)
+IF (NOT CMAKE_BUILD_TYPE)
+    SET(CMAKE_BUILD_TYPE Release)
+ENDIF ()
 
-#编译 工厂模式
-ADD_EXECUTABLE(Factory Factory/Factory.h Factory/main.cpp)
+# find the lib directory
+LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib/${PLATFORM})
 
-#编译 抽象工厂模式
-ADD_EXECUTABLE(AbstractFactory AbstractFactory/AbstractFactory.h AbstractFactory/main.cpp Command/Command.h Command/main.cpp)
+INCLUDE_DIRECTORIES(
+        ${PROJECT_SOURCE_DIR}/src
+)
 
-#编译 单例模式
-ADD_EXECUTABLE(Singleton Singleton/Singleton.h Singleton/main.cpp)
-TARGET_LINK_LIBRARIES(Singleton -lpthread)
-
-#编译 原型模式
-ADD_EXECUTABLE(Prototype Prototype/Prototype.h Prototype/main.cpp)
-
-#编译 建造者模式
-ADD_EXECUTABLE(Builder Builder/Builder.h Builder/main.cpp)
-
-#编译 适配器模式
-ADD_EXECUTABLE(Adapter Adapter/Adapter.h Adapter/main.cpp)
-
-#编译 外观模式
-ADD_EXECUTABLE(Facade Facade/Facade.h Facade/main.cpp)
-
-#编译 观察者模式
-ADD_EXECUTABLE(Observer Observer/Observer.h Observer/main.cpp)
-
-#编译 命令模式
-ADD_EXECUTABLE(Command Command/Command.h Command/main.cpp)
-
-#编译 策略模式
-ADD_EXECUTABLE(Strategy Strategy/Strategy.h Strategy/main.cpp)
-
-#编译 装饰器模式
-ADD_EXECUTABLE(Decorator Decorator/Decorator.h Decorator/main.cpp)
-
-#编译 模板方法模式
-ADD_EXECUTABLE(Template Template/Template.h Template/main.cpp)
-
-#编译 反射机制
-ADD_EXECUTABLE(Reflex Reflex/Reflex.h Reflex/main.cpp)
-
-#编译 TEST
-ADD_EXECUTABLE(Tst Test/main.cpp Test/ClassFactory.h)
+# Turn On/Off the test case
+OPTION(UNIT_TEST "Open unit test" ON)
+IF(UNIT_TEST)
+    ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/unit_test)
+ELSE()
+    ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/src)
+ENDIF()

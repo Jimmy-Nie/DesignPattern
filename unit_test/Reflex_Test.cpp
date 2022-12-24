@@ -1,4 +1,4 @@
-#include "Reflex.h"
+#include "Reflex/Reflex.h"
 
 class TestClassA {
 public:
