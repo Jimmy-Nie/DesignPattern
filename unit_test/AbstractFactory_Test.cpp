@@ -1,20 +1,19 @@
-#include "AbstractFactory/AbstractFactory.h"
+#include "Factory/AbstractFactory.h"
+
+using namespace DP;
 
 int main() {
     std::cout << "Abstract Factory Pattern\n" << std::endl;
 
-    AbstractFactory*    factory = nullptr;
-    AbstractShirt*      shirt   = nullptr;
-    AbstractBall*       ball    = nullptr;
+    auto pShapeFactory = FactoryProduct::getFactory(FactoryShape);
+    auto pShapeRect = pShapeFactory->getShape(ShapeRect);
+    pShapeRect->draw();
 
-    factory = new BasketballFactory();
-    shirt   = factory->getShirt();
-    ball    = factory->getBall();
+    auto pColorFactory = FactoryProduct::getFactory(FactoryColor);
+    auto pColorBlue = pColorFactory->getColor(ColorBlue);
+    pColorBlue->fill();
+
     std::cout << std::endl;
-
-    factory = new FootballFactory();
-    shirt   = factory->getShirt();
-    ball    = factory->getBall();
 
     return 0;
 }

@@ -9,122 +9,43 @@
 #include <iostream>
 #include <string>
 
-/**
- * 抽象产品类
- */
-class AbstractProduct {
-public:
-    virtual void printName() = 0;
-    virtual void play() = 0;
+namespace DP {
+
+enum ShapeType{
+    ShapeCircle,
+    ShapeRect
 };
 
-/**
- * 具体类：basketball
- */
-class Basketball : public AbstractProduct {
+class Shape {
 public:
-    Basketball() {
-        printName();
-        play();
-    }
-
-    void printName() override {
-        std::cout << "Basketball" << std::endl;
-    }
-
-    void play() override {
-        std::cout << "Jimmy play Basketball" << std::endl;
-    }
+    virtual void draw() = 0;
 };
 
-/**
- * 具体类：Football
- */
-class Football : public AbstractProduct {
+class Circle : public Shape {
 public:
-    Football() {
-        printName();
-        play();
-    }
-
-    void printName() override {
-        std::cout << "Football" << std::endl;
-    }
-
-    void play() override {
-        std::cout << "Jimmy play Football" << std::endl;
-    }
+    void draw() override { std::cout << "Circle Shape !!" << std::endl; }
 };
 
-/**
- * 具体类：Volleyball
- */
-class Volleyball : public AbstractProduct {
+class Rect : public Shape {
 public:
-    Volleyball() {
-        printName();
-        play();
-    }
-
-    void printName() override {
-        std::cout << "Volleyball" << std::endl;
-    }
-
-    void play() override {
-        std::cout << "Jimmy play Volleyball" << std::endl;
-    }
+    void draw() override { std::cout << "Rectangle Shape !!" << std::endl; }
 };
 
-
-/**
-* 抽象工厂类
-*/
-class AbstractFactory {
+class ShapeFactory {
 public:
-    virtual AbstractProduct* getProduct() = 0;
-};
-
-/**
- * 具体类：篮球工厂
- */
-class BasketballFactory : public AbstractFactory {
-public:
-    BasketballFactory() {
-        std::cout << "Basketball Factory" << std::endl;
-    }
-
-    AbstractProduct* getProduct() override {
-       std::cout << "get Basketball" << std::endl;
-       return new Basketball();
+    static Shape* getShape(ShapeType type) {
+        Shape* pShape = nullptr;
+        switch(type) {
+            case ShapeCircle:
+                pShape = new Circle();
+                break;
+            case ShapeRect:
+                pShape = new Rect();
+                break;
+            default:
+                break;
+        }
+        return pShape;
     }
 };
-
-/**
- * 具体类：足球工厂
- */
-class FootballFactory : public AbstractFactory {
-public:
-    FootballFactory() {
-        std::cout << "Football Factory" << std::endl;
-    }
-
-    AbstractProduct* getProduct() override {
-        std::cout << "get Football" << std::endl;
-        return new Football();
-    }
-};
-
-/**
- * 具体类：排球工厂
- */
-class VolleyballFactory : public AbstractFactory {
-public:
-    VolleyballFactory() {
-        std::cout << "Volleyball Factory" << std::endl;
-    }
-
-    AbstractProduct* getProduct() override {
-        std::cout << "get Volleyball" << std::endl;
-        return new Volleyball();
-    }
-};
+}

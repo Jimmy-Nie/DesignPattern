@@ -1,21 +1,16 @@
 #include "Factory/Factory.h"
 
+using namespace DP;
+
 int main() {
     std::cout << "Factory Pattern\n" << std::endl;
 
-    AbstractProduct* product = nullptr;
-    AbstractFactory* factory = nullptr;
+    auto pRect = ShapeFactory::getShape(ShapeRect);
+    pRect->draw();
 
-    factory = new BasketballFactory();
-    product = factory->getProduct();
-    std::cout << std::endl;
+    auto pCircle = ShapeFactory::getShape(ShapeCircle);
+    pCircle->draw();
 
-    factory = new FootballFactory();
-    product = factory->getProduct();
-    std::cout << std::endl;
-
-    factory = new VolleyballFactory();
-    product = factory->getProduct();
     std::cout << std::endl;
 
     return 0;
