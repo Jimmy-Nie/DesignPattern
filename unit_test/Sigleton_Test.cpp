@@ -1,7 +1,9 @@
-#include "Singleton/Singleton.h"
+#include "CreationMode/Singleton.h"
 #include <string>
 #include <thread>
 #include <chrono>
+
+using namespace DP;
 
 void threadA() {
     auto obj = Singleton::getInstance();

@@ -1,16 +1,15 @@
-#include "Prototype/Prototype.h"
+#include "CreationMode/Prototype.h"
+
+using namespace DP;
 
 int main() {
-    std::cout << "Prototype Pattern\n" << std::endl;
+    auto p_cache = new ShapeCache();
+    p_cache->loadCache();
 
-    auto jimmy = new ConcretePrototype(1, "Jimmy");
-    jimmy->print();
-    std::cout << std::endl;
-
-    auto lucy = jimmy->clone();
-    lucy->setName("Lucy");
-    lucy->setIdNum(2);
-    lucy->print();
+    Shape *p_rect = p_cache->getShape(1);
+    std:: cout << "Type: " << p_rect->getType() << std::endl;
+    std::cout << "ID: " << p_rect->getID() << std::endl;
+    p_rect->draw();
 
     return 0;
 }
