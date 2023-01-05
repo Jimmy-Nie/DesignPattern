@@ -23,8 +23,11 @@ ADD_EXECUTABLE(Builder Builder_Test.cpp)
 #编译 适配器模式
 ADD_EXECUTABLE(Adapter Adapter_Test.cpp)
 
-#桥接模式
+#编译 桥接模式
 ADD_EXECUTABLE(Bridge Bridge_Test.cpp)
+
+#编译 过滤器/标准模式
+ADD_EXECUTABLE(Filter Filter_Test.cpp)
 
 #编译 外观模式
 ADD_EXECUTABLE(Facade Facade_Test.cpp)

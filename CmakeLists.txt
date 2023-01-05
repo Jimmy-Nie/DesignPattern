@@ -21,6 +21,9 @@ LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib/${PLATFORM})
 
 INCLUDE_DIRECTORIES(
         ${PROJECT_SOURCE_DIR}/src
+        ${PROJECT_SOURCE_DIR}/src/BehaviorMode
+        ${PROJECT_SOURCE_DIR}/src/StructMode
+        ${PROJECT_SOURCE_DIR}/src/CreationMode
 )
 
 # Turn On/Off the test case
