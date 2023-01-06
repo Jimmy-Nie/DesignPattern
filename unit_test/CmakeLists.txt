@@ -29,6 +29,9 @@ ADD_EXECUTABLE(Bridge Bridge_Test.cpp)
 #编译 过滤器/标准模式
 ADD_EXECUTABLE(Filter Filter_Test.cpp)
 
+#编译 组合模式
+ADD_EXECUTABLE(Composite Composite_Test.cpp)
+
 #编译 外观模式
 ADD_EXECUTABLE(Facade Facade_Test.cpp)
 
